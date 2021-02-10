@@ -43,10 +43,10 @@ begin
         _instruction_read_flag=0;
         _instruction_read_address=0;
     end
-    else if (cache_address[pc[9:2]]==pc)
+    else if (cache_address[pc[8:2]]==pc)
     begin
         _pc=pc;
-        _instruction=cache_instruction[pc[9:2]];
+        _instruction=cache_instruction[pc[8:2]];
 //$display("IF %x %x",pc,cache_instruction[pc[9:2]]);
         stall_flag=0;
         _instruction_read_flag=0;
@@ -74,8 +74,8 @@ begin
     end
     else if (rst==0&&instruction_flag==1)
     begin
-        cache_address[instruction_read_address[9:2]]<=instruction_read_address;
-        cache_instruction[instruction_read_address[9:2]]<=instruction;
+        cache_address[instruction_read_address[8:2]]<=instruction_read_address;
+        cache_instruction[instruction_read_address[8:2]]<=instruction;
     end
 end
 endmodule

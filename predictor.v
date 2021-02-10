@@ -41,9 +41,9 @@ begin
     end 
     else if (br_update==1)
     begin
-        address[br_pc[9:2]]<=br_pc;
-        instruction[br_pc[9:2]]<=br_address;
-        jump[br_pc[9:2]]<=br;
+        address[br_pc[8:2]]<=br_pc;
+        instruction[br_pc[8:2]]<=br_address;
+        jump[br_pc[8:2]]<=br;
     end
 end
 
@@ -54,11 +54,11 @@ begin
         _pc=0;
         prediction=0;
     end
-    else if (address[pc[9:2]]==pc)
+    else if (address[pc[8:2]]==pc)
     begin
-        if (jump[pc[9:2]])
+        if (jump[pc[8:2]])
         begin
-            _pc=instruction[pc[9:2]];
+            _pc=instruction[pc[8:2]];
             prediction=1;
         end
         else

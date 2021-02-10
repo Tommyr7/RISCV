@@ -7,8 +7,8 @@
 `define Data_Address_size 31:0
 `define Data_size 31:0
 `define RAM_size 7:0
-`define Cache_size 256
-`define Predictor_size 256
+`define Cache_size 128
+`define Predictor_size 128
 
 `define Alusel_size 2:0
 
