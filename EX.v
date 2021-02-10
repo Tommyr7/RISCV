@@ -62,6 +62,7 @@ begin
     br_error=0;
     load=0;
     save=0;
+    sl_reg_address=0;
     sl_data=0;
     sl_data_length=0;
     sl_data_signed=0;

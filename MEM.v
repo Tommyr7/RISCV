@@ -79,5 +79,9 @@ begin
     begin
         _modify_data=mem_ctrl_data;
     end
+    else
+    begin
+        _modify_data=0;
+    end
 end
 endmodule
