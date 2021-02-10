@@ -10,7 +10,7 @@
 
 - 5-stage pipelined
 
-- direct mapped i-cache ( $128\times(32+32)$ bits )
+- direct mapped i-cache (128*(32+32) bits)
 
 - basic branch prediction (1-bit)
 
