@@ -217,7 +217,13 @@ begin
     end
     else if (state==2'b01)
     begin
-        if (tmp_num==1)
+        if (io_buffer_full==1)
+        begin
+            mem_dout=0;
+            mem_a=0;
+            mem_wr=0;
+        end
+        else if (tmp_num==1)
         begin
             mem_dout=sl_data[7:0];
             mem_a=tmp_address;

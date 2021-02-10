@@ -36,7 +36,7 @@ begin
     begin
         read1_data=0;
     end
-    else if (read1_address==wb_address)
+    else if (wb_flag==1&&read1_address==wb_address)
     begin
         read1_data=wb_data;
     end
@@ -51,7 +51,7 @@ begin
     begin
         read2_data=0;
     end
-    else if (read2_address==wb_address)
+    else if (wb_flag==1&&read2_address==wb_address)
     begin
         read2_data=wb_data;
     end
