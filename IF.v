@@ -42,11 +42,6 @@ begin
         stall_flag=0;
         _instruction_read_flag=0;
         _instruction_read_address=0;
-        for (i=0;i<`Cache_size;i=i+1)
-        begin
-            cache_address[i][31]=1;
-            cache_instruction[i]=0;
-        end
     end
     else if (cache_address[pc[9:2]]==pc)
     begin
@@ -69,7 +64,15 @@ end
 
 always @ (posedge clk)
 begin
-    if (rst==0&&instruction_flag==1)
+    if (rst==1)
+    begin
+        for (i=0;i<`Cache_size;i=i+1)
+        begin
+            cache_address[i][31]=1;
+            cache_instruction[i]=0;
+        end
+    end
+    else if (rst==0&&instruction_flag==1)
     begin
         cache_address[instruction_read_address[9:2]]<=instruction_read_address;
         cache_instruction[instruction_read_address[9:2]]<=instruction;
